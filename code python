@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed May 18 00:42:21 2022
+
+@author: JilanASMAÏ
+"""
+
+class Cellule():
+    def __init__(self: Cellule) -> None:
+        self.present = False
+        self.futur = False
+        self.voisins = None
+        
+    def vivant(self: Cellule):
+        return self.present
+    def voisins(self: Cellule,voisins: List[Cellule]):
+    def R_voisins(self: Cellule) -> Liste[Cellule]:
+        return self.voisins
+    def naisance(self:Cellule) -> None:
+        self.futur = True
+    def mourire(self: Cellule) -> None:
+        self.futur = False
+    def Tour(self: Cellule) -> None:
+        self.present = self.futur
+    def __str__(self: Cellule) -> str:
+        if self.actuel:
+            chaine = "X"
+        else:
+            chaine = "O"
+        return chaine
+    
+    def etat_futur(self: Cellule) -> None:
+        nbr_voisins = 0
+        
+        for voisins in self.voisins:
+            if voisins.est_vivant():
+                nbr_voisins += 1
+        
+        if (nbr_voisins != 2) and (nbr_voisins != 3) and (self.est_vivant()):
+            self.mourire()
+        elif (nbr_voisins == 3) and not (self.est_vivant()):
+            self.naisance():
+        else self.futur = self.actuel
+    
